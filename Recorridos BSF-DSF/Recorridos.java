@@ -9,7 +9,7 @@ import java.util.Stack;
 class Recorridos {
     public static void main(String[] args) {
     
-        // Constructing the graph
+       //Construyo mi grafo
         Node n0 = new Node(0);
         Node n1 = new Node(1);
         Node n2 = new Node(2);
@@ -31,7 +31,7 @@ class Recorridos {
         n5.addEdge(n3);
 
 
-        // Traversal methods
+        // Mis metodos BFS-DFS
 
         System.out.println("BFS Iterativo:");
         bfs(n0);
