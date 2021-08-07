@@ -8,31 +8,31 @@ class GrafoListAdj<T> {
         map.put(s, new LinkedList<T>());
     }
 
-    public void addEdge(T source,T destination, boolean bidirectional){
-        if (!map.containsKey(source))
-            addVertex(source);
-        if (!map.containsKey(destination))
-            addVertex(destination);
+    public void addEdge(T origen,T destino, boolean direc){
+        if (!map.containsKey(origen))
+            addVertex(origen);
+        if (!map.containsKey(destino))
+            addVertex(destino);
   
-        map.get(source).add(destination);
-        if (bidirectional == true) {
-            map.get(destination).add(source);
+        map.get(origen).add(destino);
+        if (direc == true) {
+            map.get(destino).add(origen);
         }
     }
   
     public void getVertexCount(){
-        System.out.println("The graph has " + map.keySet().size() + " vertex");
+        System.out.println("El grafo tiene " + map.keySet().size() + " vertices");
     }
   
-    public void getEdgesCount(boolean bidirection) {
+    public void getEdgesCount(boolean direc) {
         int contador = 0;
         for (T v : map.keySet()) {
             contador += map.get(v).size();
         }
-        if (bidirection == true) {
+        if (direc == true) {
             contador = contador / 2;
         }
-        System.out.println("The graph has " + contador+ " edges.");
+        System.out.println("El grafo tiene " + contador+ " aristas.");
     }
   
  
